@@ -1,6 +1,5 @@
 class Solution {
 public:
-    
     int countSubarraysWithAtMostKDistinct(vector<int>& nums, int k){
         int n=nums.size();
         
