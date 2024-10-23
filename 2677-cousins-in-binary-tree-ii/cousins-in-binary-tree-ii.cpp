@@ -1,7 +1,8 @@
 class Solution {
 public:
     TreeNode* replaceValueInTree(TreeNode* root) {
-        if (!root) return nullptr;
+        if (!root)
+            return nullptr;
 
         queue<TreeNode*> q;
         int prev = root->val;
@@ -15,7 +16,8 @@ public:
                 TreeNode* temp = q.front();
                 q.pop();
 
-                int leftRight = (temp->left ? temp->left->val : 0) + (temp->right ? temp->right->val : 0);
+                int leftRight = (temp->left ? temp->left->val : 0) +
+                                (temp->right ? temp->right->val : 0);
 
                 if (temp->left) {
                     temp->left->val = leftRight;
