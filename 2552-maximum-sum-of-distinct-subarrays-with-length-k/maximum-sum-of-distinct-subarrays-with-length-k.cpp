@@ -29,7 +29,6 @@ public:
             mp[nums[i - k]]--;
             if (mp[nums[i - k]] == 0) {
                 len--;
-
             }
 
            // Add the new element coming into the window
