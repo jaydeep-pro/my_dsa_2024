@@ -29,7 +29,7 @@ public:
             mp[nums[i - k]]--;
             if (mp[nums[i - k]] == 0) {
                 len--;
-                mp.erase(nums[i - k]); // Ensure no zero-frequency elements in the map
+
             }
 
            // Add the new element coming into the window
