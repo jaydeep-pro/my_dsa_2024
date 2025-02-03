@@ -1,27 +1,23 @@
 class Solution {
 public:
     bool check(vector<int>& nums) {
-        int cnt = 0;
-        int n = nums.size();
-        int ans =0;
-        vector<int>v;
-        for (int i = 0; i < nums.size(); i++) {
-            v.push_back(nums[i]);
+       int i =0;
+       for( i=0; i< nums.size() - 1 ;i++){
+        if(nums[i] > nums[i+1]){
+            break;
         }
-        for (int i = 0; i < nums.size(); i++) {
-            v.push_back(nums[i]);
-        }
+       }
 
-        for (int i = 0; i < v.size() - 1; i++) {
-            if (v[i] <= v[i + 1]) {
-                cnt++;
-            } else {
-                cnt = 1;
-            }
+if( i == nums.size() - 1 ) return true;
+if( (i != 0) &&(nums[0] < nums[nums.size() - 1])) return false;
 
-            ans = max(ans , cnt);
-        }
 
-        return ans >= n ? true : false;
+       for(int j =i+1;j<nums.size()-1;j++){
+        if((nums[j] > nums[j+1]) || (nums[0] < nums[nums.size() - 1])) return false;
+       }
+
+       
+
+       return true;
     }
 };
